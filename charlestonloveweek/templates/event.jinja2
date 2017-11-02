@@ -1,0 +1,68 @@
+{% extends "main.jinja2" %}
+
+{% block content %}
+<div class="eventbase">
+  <div class="shell">
+    <div class="eventbase__inner">
+      <div class="eventbase__head">
+        <div class="eventbase__head-inner">
+          <h3>{{ event.name.html }}</h3>
+          <div>{{ event.description.text }}</div>
+        </div><!-- /.eventbase__head-inner -->
+      </div><!-- /.eventbase__head -->
+      <div class="eventbase__body">
+        <div class="eventbase__cols">
+          <div class="eventbase__col eventbase__col--1of2">
+            <div class="eventbase__row">
+              <div class="eventbase__controls">
+                <div class="select">
+                  <select name="campus" id="campus">
+                    <option value="0">Organization</option>
+                    {% for place in campus %}
+                    <option value="{{ place|replace(" ", "-")|lower }}">{{ place }}</option>
+                    {% endfor %}
+                  </select>
+
+                  <div class="eventbase__icon">
+                    <i class="ico-location"></i>
+                  </div><!-- /.eventbase__icon -->
+                </div><!-- /.select -->
+              </div><!-- /.eventbase__controls -->
+            </div><!-- /.eventbase__row -->
+          </div><!-- /.eventbase__col eventbase__col-/-1of2 -->
+
+          <div class="eventbase__col eventbase__col--1of2">
+            <div class="eventbase__cols eventbase__cols--gutter-small">
+              <div class="eventbase__col eventbase__col--1of2">
+                <div class="eventbase__row">
+                  <div class="eventbase__controls">
+                    <div class="eventbase__icon">
+                      <i class="ico-calendar"></i>
+                    </div><!-- /.eventbase__icon -->
+
+                    <input type="text" name="start-date" id="start-date" placeholder="Date Start" class="field js-datepicker">
+                  </div><!-- /.eventbase__controls -->
+                </div><!-- /.eventbase__row -->
+              </div><!-- /.eventbase__col eventbase__col-/-1of2 -->
+              
+              <div class="eventbase__col eventbase__col--1of2">
+                <div class="eventbase__row">
+                  <div class="eventbase__controls">
+                    <input type="text" name="end-date" id="end-date" placeholder="Date End" class="field js-datepicker">
+                  </div><!-- /.eventbase__controls -->
+                </div><!-- /.eventbase__row -->
+              </div><!-- /.eventbase__col eventbase__col-/-1of2 -->
+            </div><!-- /.eventbase__cols eventbase__cols-/-gutter-small -->
+          </div><!-- /.eventbase__col eventbase__col-/-1of2 -->
+        </div><!-- /.eventbase__cols -->
+        
+      </div><!-- /.eventbase__body -->
+
+      <div class="eventbase__foot">
+        <div class="eventbase__actions">
+        </div><!-- /.eventbase__actions -->
+      </div><!-- /.eventbase__foot -->
+    </div><!-- /.eventbase__inner -->
+  </div><!-- /.shell -->
+</div><!-- /.eventbase -->
+{% endblock content %}

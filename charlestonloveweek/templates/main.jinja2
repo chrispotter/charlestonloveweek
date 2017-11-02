@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include 'partials/header.jinja2' %}
+<body>
+	<main class="main">
+		<div class="intro">
+			<div class="shell">
+			{%- if ( page == "home" )%}
+				<div class="search">
+					<form action="?" method="get">
+						<div class="search__inner">
+							<label for="q" class="search__label">
+								<i class="ico-search"></i>
+							</label>
+							<input type="search" name="q" id="q" placeholder="Search for an Event" value="" class="search__field">
+						</div><!-- /.search__inner -->
+					</form>
+				</div><!-- /.search -->
+			{%- endif %}
+
+				<div class="intro__content">
+					<header class="intro__head">
+						<figure class="intro__head-image">
+							<img src="{{request.static_url('charlestonloveweek:static/css/images/heart.png')}}" alt="" width="317">
+						</figure><!-- /.intro__head-image -->
+
+						<h1 class="intro__title">
+							<strong>Love</strong>
+
+							<span>week</span>
+
+							December 3-9
+						</h1><!-- /.intro__title -->
+					</header><!-- /.intro__head -->
+				</div><!-- /.intro__content -->
+			</div><!-- /.shell -->
+		</div><!-- /.intro -->
+
+		{% block content %} {% endblock content %}
+	</main><!-- /.main -->

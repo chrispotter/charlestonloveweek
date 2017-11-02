@@ -1,0 +1,23 @@
+/* ------------------------------------------------------------ *\
+	Intro
+\* ------------------------------------------------------------ */
+
+.intro { min-height: 753px; padding: 111px 0; background: linear-gradient(110deg, #fe1521 0%, #c80350 100%); color: #fff; text-align: center; }
+
+.intro .search { margin-bottom: 54px; }
+
+.intro .intro__head { position: relative; padding-top: 30px; }
+.intro .intro__head-image { position: absolute; top: 0px; left: 50%; transform: translateX(-50%); width: 100%; }
+
+.intro .intro__title { position: relative; z-index: 1;  }
+.intro .intro__title strong { display: block; font-size: 204px; font-weight: 800; letter-spacing: .01em; line-height: .9; text-transform: uppercase; }
+.intro .intro__title span { display: block; padding: 3px 0 32px 32px; font-size: 33px; font-weight: 600; letter-spacing: 1.3em; text-transform: uppercase; }
+
+/* Mobile */
+
+$breakpoint-mobile {
+	.intro { min-height: 600px; padding: 150px 0; }
+	.intro .search { margin-bottom: 30px; }
+	.intro .intro__title strong { font-size: 100px; }
+	.intro .intro__title span { font-size: 28px; }
+}

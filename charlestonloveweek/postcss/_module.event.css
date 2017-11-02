@@ -1,0 +1,53 @@
+/* ------------------------------------------------------------ *\
+	Events
+\* ------------------------------------------------------------ */
+
+.events { margin-bottom: 100px; }
+.events .events__container { display: flex; flex-flow: row wrap; justify-content: space-between; margin: 0 -15px; }
+
+/*  Event  */
+.event { width: 33.33%; padding: 0 15px; margin-bottom: 20px; }
+.event .event__container { position: relative; overflow: hidden; display: flex; flex-flow: column wrap; justify-content: space-between; padding: 18px 13px; background: #fff; color: #121212; text-decoration: none; transition: .3s; }
+.event .event__container:before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(110deg, #fe1521 0%, #c80350 100%); opacity: 0; transition: .3s; }
+
+.event .event__inner { position: relative; z-index: 1; }
+
+/*  Event Head  */
+.event .event__head { display: flex; justify-content: space-between; align-items: center; padding-left: 4px; margin-bottom: 35px; }
+.event .event__head-meta { font-weight: 300; }
+.event .event__head-meta span { display: inline-block; width: 28px; height: 28px; margin-right: 3px; border-radius: 50%; background: linear-gradient(to bottom, #d43572 0%, #f71327 100%); font-weight: 700; color: #fff; line-height: 28px; text-align: center; transition: .3s; }
+
+/*  Event Body  */
+.event .event__body { padding: 0 15px 120px 35px; }
+
+/*  Event Foot  */
+.event .event__foot-inner { display: flex; justify-content: space-between; align-items: center; padding-left: 9px; }
+.event .event__subtitle { padding-left: 8px; margin-bottom: 7px; font-size: 18px; }
+
+.event .event__location { position: relative; padding-left: 22px; }
+.event .event__location i { position: absolute; top: 0; left: 0; transition: .3s; }
+.event .event__location i + i { opacity: 0; }
+
+
+/*  Event Hover  */
+.event .event__container:hover { color: #fff; }
+.event .event__container:hover .event__location i + i { opacity: 1; }
+.event .event__container:hover .event__head-meta span { background: #fff; color: $color-red; }
+.event .event__container:hover:before { opacity: 1; }
+
+/* Small Desktop */
+$breakpoint-small-desktop {
+	.event .event__head { margin-bottom: 20px; }
+	.event .event__body { padding: 0 10px 40px; }
+}
+
+/* Tablet Portrait */
+$breakpoint-tablet-portrait {
+	.event { width: 50%; }
+}
+
+/* Mobile */
+$breakpoint-mobile {
+	.event { width: 100%; }
+	.event .event__subtitle { font-size: 16px; }
+}

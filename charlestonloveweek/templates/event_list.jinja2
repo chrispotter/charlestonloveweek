@@ -1,0 +1,53 @@
+{% extends "layout.jinja2" %}
+
+{% block content %}
+<div id="header-wrapper" class="container-fluid">
+    <div id="user-banner" class="row">
+        <div id="main" class="col-xs-6 pull-left">
+            <a href="/"><img class="header-branding outreachlogo img-responsive" src="/images/OutreachShortLogo.png"/></a>
+        </div>
+    </div>
+</div>
+<div class="container-fluid secondary-header">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4 searchbar-wrapper">
+            <div class="searchbar">
+                <form action="/" method="get" name="Search" id="Search">
+                    <span><i class="icon-magnifier"></i></span><input class="search" placeholder="Search for an Event" type="text" name="q" id="q" value="" tabindex="1">
+                </form>
+            </div>
+        </div>
+        <div class="col-xs-8 col-xs-offset-2 col-md-4 col-md-offset-4">
+            <img class="main-branding loveweek img-responsive center-block" src="/images/LoveWeekLogo.png" />
+            <h1 id="header-dates">July 22-29</h1>
+        </div>
+
+    </div>
+</div>    
+<div id="main" class="container-fluid">        
+    <div id="content" class="row">
+    <div id="event-grid" class="col-xs-12">
+        <div class="events row">
+        {% for event in events %}
+            <div class="event col-md-4">
+                <a href="/event/{{ event.id }}" class="event-link">
+                    <div class="event-top">
+                        <div class="openings-day-wrapper">
+                            <div class="openings-wrapper"><div class="openings"><p><span class="badge">{{ event.ticket_classes[0].quantity_total-event.ticket_classes[0].quantity_sold }}/{{ event.ticket_classes[0].quantity_total }}</span></p></div><p class="openings-info">Opening(s)</p></div>
+                            <div class="day-wrapper"><span class="day">Sat</span>, <span class="date">8/19</span></div>
+                        </div>
+                        <span class="title">{{ event.name.text }}</span>
+                    </div>
+                    <div class="event-bottom">
+                        <span class="organization">{{ event.organizer.name}}</span><br />
+                        <span class="city"><i class="icon-location-pin"></i>{{ event.venue.city }}</span>
+                        <div class="time-wrapper"><div class="time">11:00 am - 2:00 pm</div></div>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+    </div>
+</div>
+{% endblock content %}

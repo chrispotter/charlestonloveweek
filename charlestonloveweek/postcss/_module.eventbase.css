@@ -1,0 +1,52 @@
+/* ------------------------------------------------------------ *\
+	Events - page
+\* ------------------------------------------------------------ */
+
+.eventbase { position: relative; top: -104px; margin-bottom: 40px; }
+.eventbase > .shell { position: relative; }
+
+.eventbase .eventbase__inner { position: relative; padding: 61px 20px 57px; background: #fff; box-shadow: 4px 8px 30px 10px rgba(0, 0, 0, .1); }
+
+.eventbase body { max-width: 750px; margin: 0 auto; }
+
+/*  Form Head  */
+.eventbase .eventbase__head { 
+	width: 100%;
+	padding: 15px 15px 50px 15px;
+	text-align: center;
+}
+.eventbase .eventbase__head .eventbase__head-inner h3 {
+	font-size: 35px;
+}
+
+/*  Form Cols  */
+.eventbase .eventbase__cols { margin: 0 -33px; }
+.eventbase .eventbase__cols:after { @extend clearfix; }
+
+.eventbase .eventbase__col { float: left; width: 100%; padding: 0 33px; }
+.eventbase .eventbase__col--1of2 { width: 50%; }
+
+.eventbase .eventbase__cols--gutter-small { margin: 0 -9px; }
+.eventbase .eventbase__cols--gutter-small .eventbase__col { padding: 0 9px; }
+
+/*  eventbase Row  */
+.eventbase .eventbase__row { margin-bottom: 55px; }
+
+.eventbase .eventbase__controls { position: relative; }
+.eventbase .eventbase__controls .eventbase__icon + .field { padding-left: 27px; }
+.eventbase .eventbase__icon { position: absolute; top: 2px; left: 2px; }
+
+/*  eventbase Actions  */
+.eventbase .eventbase__actions { padding-right: 10px; text-align: right; }
+.eventbase .checkboxes { margin-bottom: 23px; }
+
+/* Mobile */
+$breakpoint-mobile {
+	.eventbase .eventbase__head { width: 100%; margin: 0; }
+	.eventbase .eventbase__head .btn-secondary { width: 100%; }
+	
+	.eventbase .eventbase__inner { padding: 20px 10px; }
+	.eventbase .eventbase__col { width: 100%; }
+	.eventbase .eventbase__row { margin-bottom: 20px; }
+	.eventbase .eventbase__actions { text-align: center; padding: 0; }
+}

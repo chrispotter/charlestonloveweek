@@ -1,0 +1,17 @@
+/* ------------------------------------------------------------ *\
+	Datepicker
+\* ------------------------------------------------------------ */
+
+.ui-widget.ui-widget-content { border: 1px solid color($color-red tint(70%)); border-radius: 0; color: #131313; }
+
+.ui-datepicker .ui-datepicker-title { color: #131313; }
+
+.ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br { border-radius: 0; background: color($color-red tint(95%)); }
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active { background: #fff; border-color: color($color-red tint(70%));  }
+
+/*  Selected Date  */
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover { background: color($color-red tint(40%)); color: #fff; }
+
+/*  Today's Date  */
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight { background: color($color-red tint(90%)); }

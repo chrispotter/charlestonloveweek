@@ -1,0 +1,52 @@
+/* ------------------------------------------------------------ *\
+	Form
+\* ------------------------------------------------------------ */
+
+.form { position: relative; top: -104px; margin-bottom: 40px; }
+.form > .shell { position: relative; }
+
+.form .form__inner { position: relative; padding: 61px 20px 57px; background: #fff; box-shadow: 4px 8px 30px 10px rgba(0, 0, 0, .1); }
+
+.form form { max-width: 750px; margin: 0 auto; }
+
+/*  Form Head  */
+.form .form__head { position: absolute; top: -101px; right: 0; margin-right: 15px; }
+.form .form__head-inner { padding: 0 15px; }
+
+/*  Form Cols  */
+.form .form__cols { margin: 0 -33px; }
+.form .form__cols:after { @extend clearfix; }
+
+.form .form__col { float: left; width: 100%; padding: 0 33px; }
+.form .form__col--1of2 { width: 50%; }
+
+.form .form__cols--gutter-small { margin: 0 -9px; }
+.form .form__cols--gutter-small .form__col { padding: 0 9px; }
+
+/*  Form Row  */
+.form .form__row { margin-bottom: 55px; }
+
+.form .form__controls { position: relative; }
+.form .form__controls .form__icon + .field { padding-left: 27px; }
+.form .form__icon { position: absolute; top: 2px; left: 2px; }
+
+/*  Form Actions  */
+.form .form__actions { padding-right: 10px; text-align: right; }
+.form .checkboxes { margin-bottom: 23px; }
+
+/* Tablet Portrait */
+$breakpoint-tablet-portrait {
+	.form { top: -50px; }
+	.form .form__head { top: -75px; }
+}
+
+/* Mobile */
+$breakpoint-mobile {
+	.form .form__head { width: 100%; margin: 0; }
+	.form .form__head .btn-secondary { width: 100%; }
+	
+	.form .form__inner { padding: 20px 10px; }
+	.form .form__col { width: 100%; }
+	.form .form__row { margin-bottom: 20px; }
+	.form .form__actions { text-align: center; padding: 0; }
+}

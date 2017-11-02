@@ -1,0 +1,27 @@
+{% block head %}
+<head>
+	<meta charset="utf-8" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Charleston Love Week</title>
+
+	<link rel="shortcut icon" type="image/x-icon" href="{{request.static_url('charlestonloveweek:static/css/images/favicon.ico')}}" />
+
+	<!-- Vendor Styles -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700,800" rel="stylesheet">
+	<link rel="stylesheet" href="{{request.static_url('charlestonloveweek:static/vendor/jquery-datepicker/jquery-ui.min.css')}}" />
+
+	<!-- App Styles -->
+	<link rel="stylesheet" href="{{request.static_url('charlestonloveweek:static/css/style.css')}}" />
+
+	<!-- Vendor JS -->
+	<script src="{{request.static_url('charlestonloveweek:static/vendor/jquery-1.12.4.min.js')}}"></script>
+	<script src="{{request.static_url('charlestonloveweek:static/vendor/jquery-datepicker/jquery-ui.min.js')}}"></script>
+	<script src="https://unpkg.com/shufflejs@5"></script>
+	<script src="{{request.static_url('charlestonloveweek:static/js/shuffle.js')}}"></script>
+
+	<!-- App JS -->
+	<script src="{{request.static_url('charlestonloveweek:static/js/functions.js')}}"></script>
+</head>
+{% endblock head %}

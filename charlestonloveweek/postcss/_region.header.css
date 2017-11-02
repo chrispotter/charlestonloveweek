@@ -1,0 +1,14 @@
+/* ------------------------------------------------------------ *\
+	Header
+\* ------------------------------------------------------------ */
+
+.header { position: absolute; top: 0; left: 0; width: 100%; }
+.header .header__inner { display: flex; justify-content: space-between; align-items: center; padding: 16px 0 0; }
+
+
+/* Mobile */
+$breakpoint-mobile {
+	.header .header__inner { flex-direction: column; }
+	.header .logo { margin-bottom: 20px; }
+	
+}

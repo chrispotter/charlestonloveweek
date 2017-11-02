@@ -1,0 +1,28 @@
+/* ------------------------------------------------------------ *\
+	Button
+\* ------------------------------------------------------------ */
+
+.btn { position: relative; display: inline-block; vertical-align: middle; min-width: 150px; height: 60px; padding: 0; border: 0 none; border-radius: 0; background: #fff; font-family: $font-family-sans-serif; font-size: 20px; font-weight: 300; color: $color-red; line-height: 58px; letter-spacing: .05em; text-transform: uppercase; text-decoration: none; text-align: center; cursor: pointer; transition: .3s; 
+	-webkit-appearance: none;
+	   -moz-appearance: none;
+	 		appearance: none;
+}
+
+.btn:after { content: ''; position: absolute; top: -2px; left: -2px; right: -2px; bottom: -2px; background: linear-gradient(to bottom, #cd054b 0%, #fc1523 100%);   }
+.btn > span { position: relative; z-index: 1; display: block; padding: 0 10px 0 26px; background: #fff; color: $color-red; transition: .3s; }
+.btn .btn__arrow { display: inline-block; margin-left: 18px; font-size: 26px; }
+
+.btn:hover > span { background: transparent; color: #fff; }
+
+
+/*  Button Secondary  */
+.btn-secondary { position: relative; display: inline-block; vertical-align: middle; min-width: 270px; height: 64px; padding: 0 28px; border: 1px solid #fff; border-radius: 0; background: transparent; font-family: $font-family-sans-serif; font-size: 20px; font-weight: 300; color: #fff; line-height: 62px; letter-spacing: .05em; text-transform: uppercase; text-decoration: none; text-align: center; cursor: pointer; transition: .3s; 
+	-webkit-appearance: none;
+	   -moz-appearance: none;
+	 		appearance: none;
+
+}
+
+.btn-secondary span { display: inline-block; transform: rotate(-90deg); margin-left: 17px; font-size: 26px; transition: transform .3s; }
+.btn-secondary.active span { transform: rotate(90deg); }
+.btn-secondary:hover { background: #fff; color: $color-red; }

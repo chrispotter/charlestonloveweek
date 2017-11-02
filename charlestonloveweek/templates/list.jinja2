@@ -1,0 +1,170 @@
+{% extends "main.jinja2" %}
+
+{% block content %}
+<div class="form">
+  <div class="shell">
+    <div class="form__head">
+      <div class="form__head-inner">
+        <button type="button" class="btn-secondary js-form-toggle">
+          Filter Events <span>&gt;</span>
+        </button>
+      </div><!-- /.form__head-inner -->
+    </div><!-- /.form__head -->
+
+    <div class="form__inner">
+      <form action="?">
+
+        <div class="form__body">
+          <div class="form__cols">
+            <div class="form__col form__col--1of2">
+              <div class="form__row">
+                <div class="form__controls">
+                  <div class="select">
+                    <select name="campus" id="campus">
+                      <option value="">Organization</option>
+                      {% for place in campus %}
+                      <option value="{{ place|replace(" ", "-")|lower }}">{{ place }}</option>
+                      {% endfor %}
+                    </select>
+
+                    <div class="form__icon">
+                      <i class="ico-location"></i>
+                    </div><!-- /.form__icon -->
+                  </div><!-- /.select -->
+                </div><!-- /.form__controls -->
+              </div><!-- /.form__row -->
+            </div><!-- /.form__col form__col-/-1of2 -->
+
+            <div class="form__col form__col--1of2">
+              <div class="form__cols form__cols--gutter-small">
+                <div class="form__col form__col--1of2">
+                  <div class="form__row">
+                    <div class="form__controls">
+                      <div class="form__icon">
+                        <i class="ico-calendar"></i>
+                      </div><!-- /.form__icon -->
+
+                      <input type="text" name="start-date" id="start-date" placeholder="Date Start" class="field js-datepicker">
+                    </div><!-- /.form__controls -->
+                  </div><!-- /.form__row -->
+                </div><!-- /.form__col form__col-/-1of2 -->
+                
+                <div class="form__col form__col--1of2">
+                  <div class="form__row">
+                    <div class="form__controls">
+                      <div class="form__icon">
+                        <i class="ico-calendar"></i>
+                      </div><!-- /.form__icon -->
+                      <input type="text" name="end-date" id="end-date" placeholder="Date End" class="field js-datepicker">
+                    </div><!-- /.form__controls -->
+                  </div><!-- /.form__row -->
+                </div><!-- /.form__col form__col-/-1of2 -->
+              </div><!-- /.form__cols form__cols-/-gutter-small -->
+            </div><!-- /.form__col form__col-/-1of2 -->
+          </div><!-- /.form__cols -->
+          
+          <div class="checkboxes">
+            <header class="checkboxes__head">
+              <h5 class="checkboxes__title">
+                <i class="ico-category"></i> Category
+              </h5><!-- /.checkboxes__title -->
+            </header><!-- /.checkboxes__head -->
+          
+            <div class="checkboxes__body">
+              <div class="checkbox">
+                <input type="checkbox" name="organization" value="11999" id="organization">
+          
+                <label for="organization">Organization/Packaging</label>
+              </div><!-- /.checkbox -->
+          
+              <div class="checkbox">
+                <input type="checkbox" name="indoor" value="indoor" id="indoor">
+          
+                <label for="indoor">Indoor Cleaning/Painting</label>
+              </div><!-- /.checkbox -->
+          
+              <div class="checkbox">
+                <input type="checkbox" name="outdoor" value="outdoor" id="outdoor">
+          
+                <label for="outdoor">Outdoor Cleaning/Landscaping</label>
+              </div><!-- /.checkbox -->
+          
+              <div class="checkbox">
+                <input type="checkbox" name="food" value="food" id="food">
+          
+                <label for="food">Food Preparation/Meal Services</label>
+              </div><!-- /.checkbox -->
+          
+              <div class="checkbox">
+                <input type="checkbox" name="caring" value="caring" id="caring">
+          
+                <label for="caring">Caring for People</label>
+              </div><!-- /.checkbox -->
+          
+              <div class="checkbox">
+                <input type="checkbox" name="other" value="other" id="other">
+          
+                <label for="other">Other</label>
+              </div><!-- /.checkbox -->
+            </div><!-- /.checkboxes__body -->
+          </div><!-- /.checkboxes -->
+        </div><!-- /.form__body -->
+
+        <div class="form__foot">
+          <div class="form__actions">
+          </div><!-- /.form__actions -->
+        </div><!-- /.form__foot -->
+      </form>
+    </div><!-- /.form__inner -->
+  </div><!-- /.shell -->
+</div><!-- /.form -->
+<div class="events">
+  <div class="shell">
+    <div class="events__container">
+      {% for event in events %}
+      <div class="event" 
+           data-category="{{event.subcategory_id}}" 
+           data-organization="{{ event.organizer.name|replace(" ", "-")|lower }}"
+           data-start-date="{{ event.start.local }}"
+           data-end-date="{{ event.end.local }}">
+        <a href="/event/{{ event.id }}" class="event__container">
+          <div class="event__inner">
+            <header class="event__head">
+              <div class="event__head-meta">
+                <span>{{ event.ticket_classes[0].quantity_total-event.ticket_classes[0].quantity_sold }}</span> Opening(s)
+              </div><!-- .event__head-meta -->
+              
+              <div class="event__date">
+                {{ event.start.local|datetimeformat('%a %m/%d') }}
+              </div><!-- /.event__date -->
+            </header><!-- /.event__head -->
+            
+            <div class="event__body">
+              <h3 class="event__title">
+                {{ event.name.text }}
+              </h3><!-- /.event__title -->
+            </div><!-- /.event__body -->
+            
+            <div class="event__foot">
+              <h5 class="event__subtitle">
+                {{ event.organizer.name }}
+              </h5><!-- /.event__subtitle -->
+        
+              <div class="event__foot-inner">
+                <div class="event__location">
+                  <i class="ico-location"></i><i class="ico-location-white"></i> {% if event.venue.address is defined %} {{ event.venue.address.city }} {% else %} Location Disclosed {% endif %}
+                </div><!-- /.event__location -->
+        
+                <div class="event__time">
+                  {{ event.start.local|datetimeformat('%-I:%M %p')}} - {{ event.end.local|datetimeformat('%-I:%M %p')}}
+                </div><!-- /.event__time -->
+              </div><!-- /.event__foot-inner -->
+            </div><!-- /.event__foot -->
+          </div><!-- /.event__inner -->
+        </a><!-- /.event__container -->
+      </div><!-- /.event -->
+      {% endfor %}
+    </div><!-- /.events__container -->
+  </div><!-- /.shell -->
+</div><!-- /.events -->
+{% endblock content %}

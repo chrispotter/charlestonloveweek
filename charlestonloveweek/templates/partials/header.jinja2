@@ -1,0 +1,31 @@
+{% include 'templates/partials/head.jinja2' %}
+{% block header %}
+<div class="wrapper">
+<header class="header">
+  <div class="shell shell--large">
+    <div class="header__inner">
+      <a href="#" class="logo">
+        <img src="{{request.static_url('charlestonloveweek:static/css/images/logo-image.png')}}" alt="">
+
+        AWAKEN CHURCH
+      </a>
+      
+      <nav class="nav-access">
+					<ul>
+            <li>
+							<a href="#" class="nav__item">Home</a>
+						</li>
+						
+            <li>
+							<a href="#" class="nav__item">About</a>
+						</li>
+						
+						<li>
+							<a href="#" class="nav__item nav__item--border">Donate</a>
+						</li>
+					</ul>
+				</nav><!-- /.nav-access -->
+    </div><!-- /.header__inner -->
+  </div><!-- /.shell shell-/-large -->
+</header><!-- /.header -->
+{% endblock header %}

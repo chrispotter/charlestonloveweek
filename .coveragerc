@@ -1,0 +1,3 @@
+[run]
+source = charlestonloveweek
+omit = charlestonloveweek/test*
