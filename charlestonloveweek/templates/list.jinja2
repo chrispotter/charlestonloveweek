@@ -72,37 +72,37 @@
           
             <div class="checkboxes__body">
               <div class="checkbox">
-                <input type="checkbox" name="organization" value="11999" id="organization">
+                <input type="checkbox" name="organization" value="19" id="organization">
           
                 <label for="organization">Organization/Packaging</label>
               </div><!-- /.checkbox -->
           
               <div class="checkbox">
-                <input type="checkbox" name="indoor" value="indoor" id="indoor">
+                <input type="checkbox" name="indoor" value="17" id="indoor">
           
                 <label for="indoor">Indoor Cleaning/Painting</label>
               </div><!-- /.checkbox -->
           
               <div class="checkbox">
-                <input type="checkbox" name="outdoor" value="outdoor" id="outdoor">
+                <input type="checkbox" name="outdoor" value="18" id="outdoor">
           
                 <label for="outdoor">Outdoor Cleaning/Landscaping</label>
               </div><!-- /.checkbox -->
           
               <div class="checkbox">
-                <input type="checkbox" name="food" value="food" id="food">
+                <input type="checkbox" name="food" value="9" id="food">
           
                 <label for="food">Food Preparation/Meal Services</label>
               </div><!-- /.checkbox -->
           
               <div class="checkbox">
-                <input type="checkbox" name="caring" value="caring" id="caring">
+                <input type="checkbox" name="caring" value="6" id="caring">
           
                 <label for="caring">Caring for People</label>
               </div><!-- /.checkbox -->
           
               <div class="checkbox">
-                <input type="checkbox" name="other" value="other" id="other">
+                <input type="checkbox" name="other" value="1" id="other">
           
                 <label for="other">Other</label>
               </div><!-- /.checkbox -->
@@ -123,7 +123,7 @@
     <div class="events__container">
       {% for event in events %}
       <div class="event" 
-           data-category="{{event.subcategory_id}}" 
+           data-category="{{event.format_id}}" 
            data-organization="{{ event.organizer.name|replace(" ", "-")|lower }}"
            data-start-date="{{ event.start.local }}"
            data-end-date="{{ event.end.local }}">
@@ -164,6 +164,13 @@
         </a><!-- /.event__container -->
       </div><!-- /.event -->
       {% endfor %}
+      {% if(pagination.has_more_items) %}
+      <div class="event">
+        <div class="event__get_more_container event__container">
+          <a href="{{request.route_url('load_more', continuation=pagination.continuation )}}" class="disabled join"> LOAD MORE </a>
+        </div><!-- .events__get_more_container -->
+      </div>
+      {% endif %}
     </div><!-- /.events__container -->
   </div><!-- /.shell -->
 </div><!-- /.events -->

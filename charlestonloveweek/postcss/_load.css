@@ -40,6 +40,8 @@
 	III. Modules
 \* ------------------------------------------------------------ */
 
+@import '_module.aboutme.css';
+
 @import '_module.btn.css';
 
 @import '_module.event.css';

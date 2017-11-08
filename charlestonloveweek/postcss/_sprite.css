@@ -3,6 +3,8 @@
 .ico-arrow-up { background: url(../css/images/sprite/ico-arrow-up.png) no-repeat 0 0; background-size: 100% 100%; width: 12px; height: 12px; display: inline-block; vertical-align: middle; font-size: 0; }
 .ico-calendar { background: url(../css/images/sprite/ico-calendar.png) no-repeat 0 0; background-size: 100% 100%; width: 19px; height: 18px; display: inline-block; vertical-align: middle; font-size: 0; }
 .ico-category { background: url(../css/images/sprite/ico-category.png) no-repeat 0 0; background-size: 100% 100%; width: 19px; height: 16px; display: inline-block; vertical-align: middle; font-size: 0; }
+.ico-clock { background: url(../css/images/sprite/ico-clock.png) no-repeat 0 0; background-size: 100% 100%; width: 20px; height: 20px; display: inline-block; vertical-align: middle; font-size: 0; }
+.ico-email { background: url(../css/images/sprite/ico-email.png) no-repeat 0 0; background-size: 100% 100%; width: 20px; height: 20px; display: inline-block; vertical-align: middle; font-size: 0; }
 .ico-location-white { background: url(../css/images/sprite/ico-location-white.png) no-repeat 0 0; background-size: 100% 100%; width: 14px; height: 20px; display: inline-block; vertical-align: middle; font-size: 0; }
 .ico-location { background: url(../css/images/sprite/ico-location.png) no-repeat 0 0; background-size: 100% 100%; width: 14px; height: 20px; display: inline-block; vertical-align: middle; font-size: 0; }
 .ico-search { background: url(../css/images/sprite/ico-search.png) no-repeat 0 0; background-size: 100% 100%; width: 20px; height: 22px; display: inline-block; vertical-align: middle; font-size: 0; }
@@ -10,5 +12,7 @@
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
 	.ico-calendar { background: url(../css/images/sprite/ico-calendar@2x.png) no-repeat 0 0; width: 19px; height: 18px; background-size: 100% 100%; display: inline-block; vertical-align: middle; font-size: 0; }
 	.ico-category { background: url(../css/images/sprite/ico-category@2x.png) no-repeat 0 0; width: 19px; height: 16px; background-size: 100% 100%; display: inline-block; vertical-align: middle; font-size: 0; }
+	.ico-clock { background: url(../css/images/sprite/ico-clock@2x.png) no-repeat 0 0; width: 20px; height: 20px; background-size: 100% 100%; display: inline-block; vertical-align: middle; font-size: 0; }
+	.ico-email { background: url(../css/images/sprite/ico-email@2x.png) no-repeat 0 0; width: 20px; height: 20px; background-size: 100% 100%; display: inline-block; vertical-align: middle; font-size: 0; }
 	.ico-location-white { background: url(../css/images/sprite/ico-location-white@2x.png) no-repeat 0 0; width: 14px; height: 20px; background-size: 100% 100%; display: inline-block; vertical-align: middle; font-size: 0; }
 	.ico-location { background: url(../css/images/sprite/ico-location@2x.png) no-repeat 0 0; width: 14px; height: 20px; background-size: 100% 100%; display: inline-block; vertical-align: middle; font-size: 0; }}

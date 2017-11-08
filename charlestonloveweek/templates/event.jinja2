@@ -4,64 +4,100 @@
 <div class="eventbase">
   <div class="shell">
     <div class="eventbase__inner">
-      <div class="eventbase__head">
-        <div class="eventbase__head-inner">
-          <h3>{{ event.name.html }}</h3>
-          <div>{{ event.description.text }}</div>
-        </div><!-- /.eventbase__head-inner -->
-      </div><!-- /.eventbase__head -->
-      <div class="eventbase__body">
-        <div class="eventbase__cols">
-          <div class="eventbase__col eventbase__col--1of2">
-            <div class="eventbase__row">
-              <div class="eventbase__controls">
-                <div class="select">
-                  <select name="campus" id="campus">
-                    <option value="0">Organization</option>
-                    {% for place in campus %}
-                    <option value="{{ place|replace(" ", "-")|lower }}">{{ place }}</option>
-                    {% endfor %}
-                  </select>
-
-                  <div class="eventbase__icon">
-                    <i class="ico-location"></i>
-                  </div><!-- /.eventbase__icon -->
-                </div><!-- /.select -->
-              </div><!-- /.eventbase__controls -->
-            </div><!-- /.eventbase__row -->
-          </div><!-- /.eventbase__col eventbase__col-/-1of2 -->
-
-          <div class="eventbase__col eventbase__col--1of2">
-            <div class="eventbase__cols eventbase__cols--gutter-small">
-              <div class="eventbase__col eventbase__col--1of2">
+      <div class="eventbase__content">
+        <div class="eventbase__head">
+          <div class="eventbase__head-inner">
+            <div class="openings"><span class="badge">{{ event.ticket_classes[0].quantity_total-event.ticket_classes[0].quantity_sold }}/{{ event.ticket_classes[0].quantity_total }}</span><span class="openings-info"> Opening(s)</span></div>
+            <h3>{{ event.name.html | safe }}</h3>
+            <h4>{{ event.organizer.name }}</h4>
+            <div>{{ event.description.text }}</div>
+          </div><!-- /.eventbase__head-inner -->
+        </div><!-- /.eventbase__head -->
+        <div class="eventbase__body">
+          <div class="eventbase__cols">
+            <div class="eventbase__col eventbase__col--1of2">
+              <div class="eventbase__cols eventbase__cols--gutter-small">
                 <div class="eventbase__row">
-                  <div class="eventbase__controls">
+                  <div class="eventbase__item">
                     <div class="eventbase__icon">
                       <i class="ico-calendar"></i>
                     </div><!-- /.eventbase__icon -->
-
-                    <input type="text" name="start-date" id="start-date" placeholder="Date Start" class="field js-datepicker">
-                  </div><!-- /.eventbase__controls -->
+                    <span>{{ event.start.local|datetimeformat('%a %m/%d') }}</span>
+                  </div><!-- /.eventbase__item -->
                 </div><!-- /.eventbase__row -->
-              </div><!-- /.eventbase__col eventbase__col-/-1of2 -->
-              
-              <div class="eventbase__col eventbase__col--1of2">
+              </div><!-- /.eventbase__col eventbase__cols--gutter-small -->
+            </div><!-- /.eventbase__col eventbase__col-/-1of2 -->
+            <div class="eventbase__col eventbase__col--1of2">
+              <div class="eventbase__cols eventbase__cols--gutter-small">
                 <div class="eventbase__row">
-                  <div class="eventbase__controls">
-                    <input type="text" name="end-date" id="end-date" placeholder="Date End" class="field js-datepicker">
-                  </div><!-- /.eventbase__controls -->
+                  <div class="eventbase__item">
+                    <div class="eventbase__icon">
+                      <i class="ico-calendar"></i>
+                    </div><!-- /.eventbase__icon -->
+                    <span>{% if event.venue.address is defined %} {{ event.venue.address.localized_address_display }} {% else %} Location Disclosed {% endif %}</span>
+                  </div><!-- /.eventbase__item -->
                 </div><!-- /.eventbase__row -->
-              </div><!-- /.eventbase__col eventbase__col-/-1of2 -->
-            </div><!-- /.eventbase__cols eventbase__cols-/-gutter-small -->
-          </div><!-- /.eventbase__col eventbase__col-/-1of2 -->
-        </div><!-- /.eventbase__cols -->
-        
-      </div><!-- /.eventbase__body -->
+              </div>
+            </div>
+            <div class="eventbase__col eventbase__col--1of2">
+              <div class="eventbase__cols eventbase__cols--gutter-small">
+                <div class="eventbase__col eventbase__col--1of2">
+                  <div class="eventbase__row">
+                    <div class="eventbase__item">
+                      <div class="eventbase__icon">
+                        <i class="ico-clock"></i>
+                      </div><!-- /.eventbase__icon -->
+                      <span>Starts {{ event.start.local|datetimeformat('%-I:%M %p') }}</span>
+                    </div><!-- /.eventbase__item -->
+                  </div><!-- /.eventbase__row -->
+                </div>
+                <div class="eventbase__col eventbase__col--1of2">
+                  <div class="eventbase__row">
+                    <div class="eventbase__item">
+                      <div class="eventbase__icon">
+                        <i class="ico-clock"></i>
+                      </div><!-- /.eventbase__icon -->
+                      <span>Ends {{ event.end.local|datetimeformat('%-I:%M %p') }}</span>
+                    </div><!-- /.eventbase__item -->
+                  </div><!-- /.eventbase__row -->
+                </div><!-- /.eventbase__col eventbase__col-/-1of2 -->
+              </div><!-- /.eventbase__col eventbase__cols--gutter-small -->
+            </div><!-- /.eventbase__col eventbase__col-/-1of2 -->
+            <div class="eventbase__col eventbase__col--1of2">
+              <div class="eventbase__cols eventbase__cols--gutter-small">
+                <div class="eventbase__row">
+                  <div class="eventbase__item">
+                    <div class="eventbase__icon">
+                      <i class="ico-email"></i>
+                    </div><!-- /.eventbase__icon -->
+                    <span>{{ event.organizer.long_description.html | safe }}</span>
+                  </div><!-- /.eventbase__item -->
+                </div><!-- /.eventbase__row -->
+              </div>
+            </div>
+          </div><!-- /.eventbase__cols -->
 
-      <div class="eventbase__foot">
-        <div class="eventbase__actions">
-        </div><!-- /.eventbase__actions -->
-      </div><!-- /.eventbase__foot -->
+          <a href="{{request.static_url('charlestonloveweek:include/LOVE_WEEK-Liability_Release_Form.PDF') }}">Acknowledgements and Agreements Form.</a>
+
+
+          <div class="checkboxes">
+            <div class="checkbox">
+              <input type="checkbox" name="agree" id="agree">
+        
+              <label for="agree">I agree.</label>
+            </div><!-- /.checkbox -->
+          </div>
+
+          <a href="{{event.url}}" class="disabled join"> JOIN NOW</a>
+          
+        </div><!-- /.eventbase__body -->
+
+        <div class="eventbase__foot">
+          <div class="eventbase__actions">
+            <a href="{{event.url}}">{{ event.name.text }} powered by eventbrite</a>
+          </div><!-- /.eventbase__actions -->
+        </div><!-- /.eventbase__foot -->
+      </div><!-- /.eventbase__content -->
     </div><!-- /.eventbase__inner -->
   </div><!-- /.shell -->
 </div><!-- /.eventbase -->

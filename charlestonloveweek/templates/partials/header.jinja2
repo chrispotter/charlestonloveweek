@@ -13,19 +13,26 @@
       <nav class="nav-access">
 					<ul>
             <li>
-							<a href="#" class="nav__item">Home</a>
+							<a href="{{request.route_url('home')}}" class="nav__item">Home</a>
 						</li>
 						
             <li>
-							<a href="#" class="nav__item">About</a>
+							<a href="{{request.route_url('about')}}" class="nav__item">About</a>
 						</li>
 						
 						<li>
-							<a href="#" class="nav__item nav__item--border">Donate</a>
+              <a data-fancybox 
+                 data-type="iframe" 
+                 data-src="https://awakencharleston.SecureGive.com/SG/WebOnline/Transaction/Instant?transactionType=Donation&campus=5064&lockCampus=true" 
+                 href="javascript:;" 
+                 class="nav__item nav__item--border">Donate</a>
 						</li>
 					</ul>
 				</nav><!-- /.nav-access -->
     </div><!-- /.header__inner -->
   </div><!-- /.shell shell-/-large -->
 </header><!-- /.header -->
+<div class="loading" style="display: none;">
+    <div class="spinner"></div>
+</div>
 {% endblock header %}

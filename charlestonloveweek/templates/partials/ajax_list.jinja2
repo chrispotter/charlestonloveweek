@@ -1,0 +1,50 @@
+{% for event in events %}
+<div class="event" 
+      data-category="{{event.subcategory_id}}" 
+      data-organization="{{ event.organizer.name|replace(" ", "-")|lower }}"
+      data-start-date="{{ event.start.local }}"
+      data-end-date="{{ event.end.local }}">
+  <a href="/event/{{ event.id }}" class="event__container">
+    <div class="event__inner">
+      <header class="event__head">
+        <div class="event__head-meta">
+          <span>{{ event.ticket_classes[0].quantity_total-event.ticket_classes[0].quantity_sold }}</span> Opening(s)
+        </div><!-- .event__head-meta -->
+        
+        <div class="event__date">
+          {{ event.start.local|datetimeformat('%a %m/%d') }}
+        </div><!-- /.event__date -->
+      </header><!-- /.event__head -->
+      
+      <div class="event__body">
+        <h3 class="event__title">
+          {{ event.name.text }}
+        </h3><!-- /.event__title -->
+      </div><!-- /.event__body -->
+      
+      <div class="event__foot">
+        <h5 class="event__subtitle">
+          {{ event.organizer.name }}
+        </h5><!-- /.event__subtitle -->
+  
+        <div class="event__foot-inner">
+          <div class="event__location">
+            <i class="ico-location"></i><i class="ico-location-white"></i> {% if event.venue.address is defined %} {{ event.venue.address.city }} {% else %} Location Disclosed {% endif %}
+          </div><!-- /.event__location -->
+  
+          <div class="event__time">
+            {{ event.start.local|datetimeformat('%-I:%M %p')}} - {{ event.end.local|datetimeformat('%-I:%M %p')}}
+          </div><!-- /.event__time -->
+        </div><!-- /.event__foot-inner -->
+      </div><!-- /.event__foot -->
+    </div><!-- /.event__inner -->
+  </a><!-- /.event__container -->
+</div><!-- /.event -->
+{% endfor %}
+{% if(pagination.has_more_items) %}
+<div class="event">
+  <div class="event__get_more_container event__container">
+    <a href="{{request.route_url('load_more', continuation=pagination.continuation )}}" class="disabled join"> LOAD MORE </a>
+  </div><!-- .events__get_more_container -->
+</div>
+{% endif %}

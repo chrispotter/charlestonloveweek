@@ -15,8 +15,8 @@ var Demo = function (element) {
   });
 
   this.filters = {
-    categories: [],
-    organizations: [],
+    categories: this._getCurrentCategoryFilters(),
+    organizations: this._getCurrentOrganizationFilters(),
   };
 
   this._bindEventListeners();
@@ -162,6 +162,9 @@ Demo.prototype.hasActiveFilters = function () {
  * @return {boolean} Whether it satisfies all current filters.
  */
 Demo.prototype.itemPassesFilters = function (element) {
+  if(element.children[0].className.split(' ').includes('event__get_more_container')) {
+    return true;
+  }
   var categories = this.filters.categories;
   var organizations = this.filters.organizations;
   var category = element.getAttribute('data-category');
@@ -181,5 +184,7 @@ Demo.prototype.itemPassesFilters = function (element) {
 };
 
 document.addEventListener('DOMContentLoaded', function () {
-  window.demo = new Demo(document.querySelector('.events__container'));
+  if(document.querySelector('.events__container')) {
+    window.demo = new Demo(document.querySelector('.events__container'));
+  }
 });

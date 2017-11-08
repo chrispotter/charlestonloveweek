@@ -35,6 +35,26 @@
 .event .event__container:hover .event__head-meta span { background: #fff; color: $color-red; }
 .event .event__container:hover:before { opacity: 1; }
 
+.event .event__get_more_container {
+	height: 200px;
+	width: 400px;
+}
+
+.event .event__get_more_container a {
+	text-align: center;
+	transform: translate(0, 45%);
+	height: 100%;
+	text-decoration: none;
+}
+
+.event .list_eventbrite a {
+	text-align: right;
+	display: inherit;
+	font-size: 9px;
+	margin: 7px 0px 0px 0px;
+	color: red;
+}
+
 /* Small Desktop */
 $breakpoint-small-desktop {
 	.event .event__head { margin-bottom: 20px; }

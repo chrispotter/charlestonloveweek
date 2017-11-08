@@ -16,7 +16,7 @@
 						evt.initEvent('datechange', true, true);		
 						this.dispatchEvent(evt);
         }
-    }
+    	}
 		});
 
 		// Form toggle
@@ -26,6 +26,52 @@
 			$(this).toggleClass('active');
 			$(this).closest('.form').find('.form__inner').stop().slideToggle();
 		});
+
+		if($('.eventbase__body a')) {
+			$('#agree').click(function(e){
+				$('.eventbase__body a').toggleClass('disabled');
+			})
+		}
+		if($('.trigger')){
+			$('.trigger').on('click', function (event) {
+				event.preventDefault();
+				$('.trigger').iziModal({
+					iframe: true,
+					iframeHeight: 800
+				});
+			});
+		}
+		$.fn.instantiateButton = function(selector) {
+			if(selector){
+				selector.on('click', function(event) {
+					event.preventDefault();
+					var element = event.target;
+					var href = (event.target.href) ? event.target.href : $(event.target).find('.join')[0].href
+					$(".loading").toggle();
+					$.ajax({
+						url     : href,
+						type    : 'GET',
+						dataType: 'json',
+						success : function(data){
+								$(data.select).each(function(index, option){
+									if(!$('#campus').find("[value=\""+$(option).val()+"\"]").length){
+										$('#campus').append(option);
+									}
+								});
+								$('.events__container').append($(data.body));
+								$.fn.instantiateButton($('.event__get_more_container'))
+								$(element).parents('.event').remove();
+								window.demo = new Demo(document.querySelector('.events__container'));
+								window.demo.filter();
+								$(".loading").toggle();
+						}
+					});
+				});
+			}	
+		}
+		if($('.event__get_more_container')){
+			$.fn.instantiateButton($('.event__get_more_container'));	
+		}
 	});
 
 })(jQuery, window, document);

@@ -1,0 +1,41 @@
+/* ------------------------------------------------------------ *\
+	About event - page
+\* ------------------------------------------------------------ */
+
+.aboutme { position: relative; top: -150px; margin-bottom: 40px; }
+.aboutme > .shell { position: relative; }
+
+.aboutme .aboutme__inner { 
+	position: relative; 
+	padding: 61px 20px 57px; 
+	background: #fff; 
+	box-shadow: 4px 8px 30px 10px rgba(0, 0, 0, .1); 
+}
+
+.aboutme .video-container {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  margin: 5px 0 15px 0px;
+}
+ 
+/* 16x9 Aspect Ratio */
+.aboutme .video-container-16x9 {
+  padding-bottom: 56.25%;
+}
+ 
+/* 4x3 Aspect Ratio */
+.aboutme .video-container-4x3 {
+  padding-bottom: 75%;
+}
+ 
+.aboutme .video-container iframe {
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.aboutme .aboutme__content { max-width: 850px; margin: 0 auto; }
+.aboutme .aboutme__content h4 { text-align: center;}

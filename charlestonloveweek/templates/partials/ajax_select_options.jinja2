@@ -1,0 +1,3 @@
+{% for place in campus %}
+  <option value="{{ place|replace(" ", "-")|lower }}">{{ place }}</option>
+{% endfor %}

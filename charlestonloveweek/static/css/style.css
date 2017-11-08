@@ -7,6 +7,7 @@
 	         Mobile -----------------------------------
 	     03. Fonts ------------------------------------
 	     04. Helpers ----------------------------------
+	         Overlay ----------------------------------
 	         Clear ------------------------------------
 	         Notext -----------------------------------
 	         Hidden -----------------------------------
@@ -26,9 +27,10 @@
 	     07. Sidebar ----------------------------------
 	     08. Wrapper ----------------------------------
 	III. Modules --------------------------------------
-	     01. Button -----------------------------------
+	     01. About event - page -----------------------
+	     02. Button -----------------------------------
 	         Button Secondary -------------------------
-	     02. Events -----------------------------------
+	     03. Events -----------------------------------
 	         Event ------------------------------------
 	         Event Head -------------------------------
 	         Event Body -------------------------------
@@ -37,51 +39,55 @@
 	         Small Desktop ----------------------------
 	         Tablet Portrait --------------------------
 	         Mobile -----------------------------------
-	     03. Events - page ----------------------------
+	     04. Events - page ----------------------------
 	         Form Head --------------------------------
 	         Form Cols --------------------------------
 	         Mobile -----------------------------------
-	     04. Form Elements ----------------------------
-	     05. Search -----------------------------------
-	     06. Select -----------------------------------
-	     07. Checkboxes -------------------------------
+	     05. Form Elements ----------------------------
+	     06. Search -----------------------------------
+	     07. Select -----------------------------------
+	     08. Checkboxes -------------------------------
 	         Mobile -----------------------------------
-	     08. Form -------------------------------------
+	     09. Form -------------------------------------
 	         Form Head --------------------------------
 	         Form Cols --------------------------------
 	         Form Row ---------------------------------
 	         Form Actions -----------------------------
 	         Tablet Portrait --------------------------
 	         Mobile -----------------------------------
-	     09. Intro ------------------------------------
+	     10. Intro ------------------------------------
 	         Mobile -----------------------------------
-	     10. List -------------------------------------
-	     11. Logo -------------------------------------
-	     12. Nav --------------------------------------
-	     13. Nav Access -------------------------------
-	     14. Section ----------------------------------
-	     15. Slider -----------------------------------
-	     16. Table ------------------------------------
-	     17. Widget -----------------------------------
+	     11. List -------------------------------------
+	     12. Logo -------------------------------------
+	     13. Nav --------------------------------------
+	     14. Nav Access -------------------------------
+	     15. Section ----------------------------------
+	     16. Slider -----------------------------------
+	     17. Table ------------------------------------
+	     18. Widget -----------------------------------
 	IV.  Themes ---------------------------------------
 	     01. Datepicker -------------------------------
 	         Selected Date ----------------------------
 	         Today's Date -----------------------------
  */
 
-.ico-arrow-down { background-image: url(images/sprite.png); background-position: 33.33333333333333% 81.25%; background-size: 790% 420%; width: 10px; height: 10px; display: inline-block; vertical-align: middle; font-size: 0; }
-.ico-arrow-right { background-image: url(images/sprite.png); background-position: 97.01492537313433% 80%; background-size: 658.3333333333333% 350%; width: 12px; height: 12px; display: inline-block; vertical-align: middle; font-size: 0; }
-.ico-arrow-up { background-image: url(images/sprite.png); background-position: 70.1492537313433% 80%; background-size: 658.3333333333333% 350%; width: 12px; height: 12px; display: inline-block; vertical-align: middle; font-size: 0; }
-.ico-calendar { background-image: url(images/sprite.png); background-position: 40% 0%; background-size: 415.7894736842105% 233.33333333333334%; width: 19px; height: 18px; display: inline-block; vertical-align: middle; font-size: 0; }
-.ico-category { background-image: url(images/sprite.png); background-position: 0% 100%; background-size: 415.7894736842105% 262.5%; width: 19px; height: 16px; display: inline-block; vertical-align: middle; font-size: 0; }
-.ico-location-white { background-image: url(images/sprite.png); background-position: 72.3076923076923% 0%; background-size: 564.2857142857143% 210%; width: 14px; height: 20px; display: inline-block; vertical-align: middle; font-size: 0; }
-.ico-location { background-image: url(images/sprite.png); background-position: 100% 0%; background-size: 564.2857142857143% 210%; width: 14px; height: 20px; display: inline-block; vertical-align: middle; font-size: 0; }
-.ico-search { background-image: url(images/sprite.png); background-position: 0% 0%; background-size: 395% 190.9090909090909%; width: 20px; height: 22px; display: inline-block; vertical-align: middle; font-size: 0; }
+.ico-arrow-down { background-image: url(images/sprite.png); background-position: 89.65517241379311% 82.75862068965517%; background-size: 680% 680%; width: 10px; height: 10px; display: inline-block; vertical-align: middle; font-size: 0; }
+.ico-arrow-right { background-image: url(images/sprite.png); background-position: 82.14285714285714% 46.42857142857143%; background-size: 566.6666666666667% 566.6666666666667%; width: 12px; height: 12px; display: inline-block; vertical-align: middle; font-size: 0; }
+.ico-arrow-up { background-image: url(images/sprite.png); background-position: 64.28571428571429% 85.71428571428571%; background-size: 566.6666666666667% 566.6666666666667%; width: 12px; height: 12px; display: inline-block; vertical-align: middle; font-size: 0; }
+.ico-calendar { background-image: url(images/sprite.png); background-position: 0% 52%; background-size: 357.89473684210526% 377.77777777777777%; width: 19px; height: 18px; display: inline-block; vertical-align: middle; font-size: 0; }
+.ico-category { background-image: url(images/sprite.png); background-position: 46.93877551020408% 50%; background-size: 357.89473684210526% 425%; width: 19px; height: 16px; display: inline-block; vertical-align: middle; font-size: 0; }
+.ico-clock { background-image: url(images/sprite.png); background-position: 50% 0%; background-size: 340% 340%; width: 20px; height: 20px; display: inline-block; vertical-align: middle; font-size: 0; }
+.ico-email { background-image: url(images/sprite.png); background-position: 100% 0%; background-size: 340% 340%; width: 20px; height: 20px; display: inline-block; vertical-align: middle; font-size: 0; }
+.ico-location-white { background-image: url(images/sprite.png); background-position: 0% 100%; background-size: 485.71428571428567% 340%; width: 14px; height: 20px; display: inline-block; vertical-align: middle; font-size: 0; }
+.ico-location { background-image: url(images/sprite.png); background-position: 33.33333333333333% 100%; background-size: 485.71428571428567% 340%; width: 14px; height: 20px; display: inline-block; vertical-align: middle; font-size: 0; }
+.ico-search { background-image: url(images/sprite.png); background-position: 0% 0%; background-size: 340% 309.09090909090907%; width: 20px; height: 22px; display: inline-block; vertical-align: middle; font-size: 0; }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-	.ico-calendar { background-image: url(images/sprite.@2x.png); background-position: 0% 0%; background-size: 221.0526315789474% 233.33333333333334%; width: 19px; height: 18px; display: inline-block; vertical-align: middle; font-size: 0; }
-	.ico-category { background-image: url(images/sprite.@2x.png); background-position: 100% 0%; background-size: 221.0526315789474% 262.5%; width: 19px; height: 16px; display: inline-block; vertical-align: middle; font-size: 0; }
-	.ico-location-white { background-image: url(images/sprite.@2x.png); background-position: 0% 100%; background-size: 300% 210%; width: 14px; height: 20px; display: inline-block; vertical-align: middle; font-size: 0; }
-	.ico-location { background-image: url(images/sprite.@2x.png); background-position: 64.28571428571429% 100%; background-size: 300% 210%; width: 14px; height: 20px; display: inline-block; vertical-align: middle; font-size: 0; }}
+	.ico-calendar { background-image: url(images/sprite.@2x.png); background-position: 0% 100%; background-size: 421.05263157894734% 233.33333333333334%; width: 19px; height: 18px; display: inline-block; vertical-align: middle; font-size: 0; }
+	.ico-category { background-image: url(images/sprite.@2x.png); background-position: 37.704918032786885% 92.3076923076923%; background-size: 421.05263157894734% 262.5%; width: 19px; height: 16px; display: inline-block; vertical-align: middle; font-size: 0; }
+	.ico-clock { background-image: url(images/sprite.@2x.png); background-position: 0% 0%; background-size: 400% 210%; width: 20px; height: 20px; display: inline-block; vertical-align: middle; font-size: 0; }
+	.ico-email { background-image: url(images/sprite.@2x.png); background-position: 40% 0%; background-size: 400% 210%; width: 20px; height: 20px; display: inline-block; vertical-align: middle; font-size: 0; }
+	.ico-location-white { background-image: url(images/sprite.@2x.png); background-position: 72.72727272727273% 0%; background-size: 571.4285714285714% 210%; width: 14px; height: 20px; display: inline-block; vertical-align: middle; font-size: 0; }
+	.ico-location { background-image: url(images/sprite.@2x.png); background-position: 100% 0%; background-size: 571.4285714285714% 210%; width: 14px; height: 20px; display: inline-block; vertical-align: middle; font-size: 0; }}
 .cols:after,
 .eventbase .eventbase__cols:after,
 .form .form__cols:after { content: ''; line-height: 0; display: table; clear: both; }
@@ -222,6 +228,34 @@ blockquote:last-child { margin-bottom: 0; }
 /* ------------------------------------------------------------ *\
 	Helpers
 \* ------------------------------------------------------------ */
+/* 	Overlay	 */
+.loading {
+	background: rgba(0, 0, 0, 0.3);
+	bottom: 0;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 9998;
+}
+.spinner {
+	background: #000 url(https://code.jquery.com/mobile/1.1.0/images/ajax-loader.gif) 0 0 no-repeat;
+	border: 0;
+	border-radius: 36px;
+	box-shadow: 0 1px 1px -1px #fff;
+	display: block;
+	height: 46px;
+	left: 50%;
+	margin:-23px 0 0 -23px;
+	opacity: .18;
+	overflow: hidden;
+	padding:1px;
+	position: fixed;
+	text-align:center;
+	top: 50%;
+	width: 46px;
+	z-index: 9999;
+}
 /*  Clear  */
 .clear:after { content: ''; line-height: 0; display: table; clear: both; }
 /*  Notext  */
@@ -326,6 +360,40 @@ blockquote:last-child { margin-bottom: 0; }
 	III. Modules
 \* ------------------------------------------------------------ */
 /* ------------------------------------------------------------ *\
+	About event - page
+\* ------------------------------------------------------------ */
+.aboutme { position: relative; top: -150px; margin-bottom: 40px; }
+.aboutme > .shell { position: relative; }
+.aboutme .aboutme__inner { 
+	position: relative; 
+	padding: 61px 20px 57px; 
+	background: #fff; 
+	box-shadow: 4px 8px 30px 10px rgba(0, 0, 0, .1); 
+}
+.aboutme .video-container {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  margin: 5px 0 15px 0px;
+}
+/* 16x9 Aspect Ratio */
+.aboutme .video-container-16x9 {
+  padding-bottom: 56.25%;
+}
+/* 4x3 Aspect Ratio */
+.aboutme .video-container-4x3 {
+  padding-bottom: 75%;
+}
+.aboutme .video-container iframe {
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.aboutme .aboutme__content { max-width: 850px; margin: 0 auto; }
+.aboutme .aboutme__content h4 { text-align: center;}
+/* ------------------------------------------------------------ *\
 	Button
 \* ------------------------------------------------------------ */
 .btn { position: relative; display: inline-block; vertical-align: middle; min-width: 150px; height: 60px; padding: 0; border: 0 none; border-radius: 0; background: #fff; font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 300; color: #fe1521; line-height: 58px; letter-spacing: .05em; text-transform: uppercase; text-decoration: none; text-align: center; cursor: pointer; transition: .3s; 
@@ -374,6 +442,24 @@ blockquote:last-child { margin-bottom: 0; }
 .event .event__container:hover .event__location i + i { opacity: 1; }
 .event .event__container:hover .event__head-meta span { background: #fff; color: #fe1521; }
 .event .event__container:hover:before { opacity: 1; }
+.event .event__get_more_container {
+	height: 200px;
+	width: 400px;
+}
+.event .event__get_more_container a {
+	text-align: center;
+	-ms-transform: translate(0, 45%);
+	    transform: translate(0, 45%);
+	height: 100%;
+	text-decoration: none;
+}
+.event .list_eventbrite a {
+	text-align: right;
+	display: inherit;
+	font-size: 9px;
+	margin: 7px 0px 0px 0px;
+	color: red;
+}
 /* Small Desktop */
 @media (max-width: 1500px) {
 	.event .event__head { margin-bottom: 20px; }
@@ -391,10 +477,15 @@ blockquote:last-child { margin-bottom: 0; }
 /* ------------------------------------------------------------ *\
 	Events - page
 \* ------------------------------------------------------------ */
-.eventbase { position: relative; top: -104px; margin-bottom: 40px; }
+.eventbase { position: relative; top: -150px; margin-bottom: 40px; }
 .eventbase > .shell { position: relative; }
-.eventbase .eventbase__inner { position: relative; padding: 61px 20px 57px; background: #fff; box-shadow: 4px 8px 30px 10px rgba(0, 0, 0, .1); }
-.eventbase body { max-width: 750px; margin: 0 auto; }
+.eventbase .eventbase__inner { 
+	position: relative; 
+	padding: 61px 20px 57px; 
+	background: #fff; 
+	box-shadow: 4px 8px 30px 10px rgba(0, 0, 0, .1); 
+}
+.eventbase .eventbase__content { max-width: 850px; margin: 0 auto; }
 /*  Form Head  */
 .eventbase .eventbase__head { 
 	width: 100%;
@@ -403,21 +494,67 @@ blockquote:last-child { margin-bottom: 0; }
 }
 .eventbase .eventbase__head .eventbase__head-inner h3 {
 	font-size: 35px;
+	margin-bottom:.2em;
+}
+.eventbase .eventbase__head .eventbase__head-inner h4 {
+	font-size: 24px;
+	margin-bottom: .65em;
+	font-weight: inherit;
+}
+.eventbase .eventbase__head .eventbase__head-inner .openings{
+	text-align:left;
+	font-style: italic;
+	font-size: 12px;
 }
 /*  Form Cols  */
-.eventbase .eventbase__cols { margin: 0 -33px; }
 .eventbase .eventbase__cols:after { }
 .eventbase .eventbase__col { float: left; width: 100%; padding: 0 33px; }
-.eventbase .eventbase__col--1of2 { width: 50%; }
-.eventbase .eventbase__cols--gutter-small { margin: 0 -9px; }
-.eventbase .eventbase__cols--gutter-small .eventbase__col { padding: 0 9px; }
+.eventbase .eventbase__col--1of2 { width: 50%;}
+.eventbase .eventbase__cols--gutter-small { margin: 0 -5px; padding: 10px 0px 10px 0px; }
+.eventbase .eventbase__cols--gutter-small .eventbase__col { padding: 0 9px 0px 0px; }
+.eventbase .eventbase__cols--gutter-small .eventbase__col + .eventbase__col { padding: 0 0px 0px 9px; }
 /*  eventbase Row  */
-.eventbase .eventbase__row { margin-bottom: 55px; }
-.eventbase .eventbase__controls { position: relative; }
-.eventbase .eventbase__controls .eventbase__icon + .field { padding-left: 27px; }
-.eventbase .eventbase__icon { position: absolute; top: 2px; left: 2px; }
+.eventbase .eventbase__row {     
+	padding: 15px 0px 15px 10px;
+	margin: 11px 0px 5px 0px;
+	background-color: #f8f8f8;
+	width: 100%;
+}
+.eventbase .eventbase__body .join:hover { 
+	background: linear-gradient(110deg, #fe1521 0%, #c80350 100%); 
+	color: #fff; 
+}
+.eventbase .eventbase__body a {
+	margin:50px 0px 50px 0px;
+	display: inline-block;
+}
+.eventbase .eventbase__body .join.disabled { 
+	pointer-events: none;
+	cursor: default;
+	color: lightgrey;
+	border-color: #f8f8f8;
+	background-color: #f8f8f8;
+}
+.eventbase .eventbase__body .join{ 
+	border: 1px solid #fe1521; 
+	border-radius: 0; 
+	line-height: 34px;
+	font-size: 15px; 
+	font-weight: 700; 
+	color: #fe1521;
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	text-decoration: none;
+	margin-top: 50px;
+}
+.eventbase .eventbase__item { position: relative; }
+.eventbase .eventbase__item .eventbase__icon + span { padding-left: 27px; }
+.eventbase .eventbase__icon { position: absolute; top: -2px; left: 2px; }
+.eventbase .eventbase__item p{ display: inline-block; }
+.eventbase .eventbase__item a{ margin: 0px 0px 0px 0px; }
 /*  eventbase Actions  */
-.eventbase .eventbase__actions { padding-right: 10px; text-align: right; }
+.eventbase .eventbase__actions { padding-right: 10px; text-align: right; font-size: 10px; color:grey; }
 .eventbase .checkboxes { margin-bottom: 23px; }
 /* Mobile */
 @media (max-width: 767px) {

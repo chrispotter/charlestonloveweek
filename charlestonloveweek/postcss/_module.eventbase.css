@@ -2,12 +2,17 @@
 	Events - page
 \* ------------------------------------------------------------ */
 
-.eventbase { position: relative; top: -104px; margin-bottom: 40px; }
+.eventbase { position: relative; top: -150px; margin-bottom: 40px; }
 .eventbase > .shell { position: relative; }
 
-.eventbase .eventbase__inner { position: relative; padding: 61px 20px 57px; background: #fff; box-shadow: 4px 8px 30px 10px rgba(0, 0, 0, .1); }
+.eventbase .eventbase__inner { 
+	position: relative; 
+	padding: 61px 20px 57px; 
+	background: #fff; 
+	box-shadow: 4px 8px 30px 10px rgba(0, 0, 0, .1); 
+}
 
-.eventbase body { max-width: 750px; margin: 0 auto; }
+.eventbase .eventbase__content { max-width: 850px; margin: 0 auto; }
 
 /*  Form Head  */
 .eventbase .eventbase__head { 
@@ -17,27 +22,78 @@
 }
 .eventbase .eventbase__head .eventbase__head-inner h3 {
 	font-size: 35px;
+	margin-bottom:.2em;
+}
+.eventbase .eventbase__head .eventbase__head-inner h4 {
+	font-size: 24px;
+	margin-bottom: .65em;
+	font-weight: inherit;
+}
+.eventbase .eventbase__head .eventbase__head-inner .openings{
+	text-align:left;
+	font-style: italic;
+	font-size: 12px;
 }
 
 /*  Form Cols  */
-.eventbase .eventbase__cols { margin: 0 -33px; }
 .eventbase .eventbase__cols:after { @extend clearfix; }
 
 .eventbase .eventbase__col { float: left; width: 100%; padding: 0 33px; }
-.eventbase .eventbase__col--1of2 { width: 50%; }
+.eventbase .eventbase__col--1of2 { width: 50%;}
 
-.eventbase .eventbase__cols--gutter-small { margin: 0 -9px; }
-.eventbase .eventbase__cols--gutter-small .eventbase__col { padding: 0 9px; }
+.eventbase .eventbase__cols--gutter-small { margin: 0 -5px; padding: 10px 0px 10px 0px; }
+.eventbase .eventbase__cols--gutter-small .eventbase__col { padding: 0 9px 0px 0px; }
+.eventbase .eventbase__cols--gutter-small .eventbase__col + .eventbase__col { padding: 0 0px 0px 9px; }
 
 /*  eventbase Row  */
-.eventbase .eventbase__row { margin-bottom: 55px; }
+.eventbase .eventbase__row {     
+	padding: 15px 0px 15px 10px;
+	margin: 11px 0px 5px 0px;
+	background-color: #f8f8f8;
+	width: 100%;
+}
 
-.eventbase .eventbase__controls { position: relative; }
-.eventbase .eventbase__controls .eventbase__icon + .field { padding-left: 27px; }
-.eventbase .eventbase__icon { position: absolute; top: 2px; left: 2px; }
+.eventbase .eventbase__body .join:hover { 
+	background: linear-gradient(110deg, #fe1521 0%, #c80350 100%); 
+	color: #fff; 
+}
+
+.eventbase .eventbase__body a {
+	margin:50px 0px 50px 0px;
+	display: inline-block;
+}
+
+.eventbase .eventbase__body .join.disabled { 
+	pointer-events: none;
+	cursor: default;
+	color: lightgrey;
+	border-color: #f8f8f8;
+	background-color: #f8f8f8;
+}
+
+.eventbase .eventbase__body .join{ 
+	border: 1px solid $color-red; 
+	border-radius: 0; 
+	line-height: 34px;
+	font-size: 15px; 
+	font-weight: 700; 
+	color: $color-red;
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	text-decoration: none;
+	margin-top: 50px;
+}
+
+.eventbase .eventbase__item { position: relative; }
+.eventbase .eventbase__item .eventbase__icon + span { padding-left: 27px; }
+.eventbase .eventbase__icon { position: absolute; top: -2px; left: 2px; }
+
+.eventbase .eventbase__item p{ display: inline-block; }
+.eventbase .eventbase__item a{ margin: 0px 0px 0px 0px; }
 
 /*  eventbase Actions  */
-.eventbase .eventbase__actions { padding-right: 10px; text-align: right; }
+.eventbase .eventbase__actions { padding-right: 10px; text-align: right; font-size: 10px; color:grey; }
 .eventbase .checkboxes { margin-bottom: 23px; }
 
 /* Mobile */
