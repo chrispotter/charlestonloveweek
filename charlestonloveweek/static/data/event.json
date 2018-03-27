@@ -1,0 +1,150 @@
+{
+  "event": {
+    "name": {
+      "text": "Sorting and Packing Food Items",
+      "html": "Sorting and Packing Food Items"
+    },
+    "description": {
+      "text":
+        "Volunteers will help sort and pack food for distribution which includes: sorting food by category, checking food for expiration dates, packaging food into boxes, and bagging fresh produce. Volunteers will sort and pack several thousand pounds of food in one shift; helping to provide thousands of meals to our neighbors. Volunteers 9-16 years of age must be accompanied by an adult. \u00a0",
+      "html":
+        "<P>Volunteers will help sort and pack food for distribution which includes: sorting food by category, checking food for expiration dates, packaging food into boxes, and bagging fresh produce. Volunteers will sort and pack several thousand pounds of food in one shift; helping to provide thousands of meals to our neighbors. Volunteers 9-16 years of age must be accompanied by an adult. \u00a0</P>"
+    },
+    "id": "39032544391",
+    "url":
+      "https://www.eventbrite.com/e/sorting-and-packing-food-items-tickets-39032544391",
+    "start": {
+      "timezone": "America/New_York",
+      "local": "2017-12-06T09:00:00",
+      "utc": "2017-12-06T14:00:00Z"
+    },
+    "end": {
+      "timezone": "America/New_York",
+      "local": "2017-12-06T12:00:00",
+      "utc": "2017-12-06T17:00:00Z"
+    },
+    "created": "2017-10-18T03:36:53Z",
+    "changed": "2017-11-21T22:30:48Z",
+    "capacity": 50,
+    "capacity_is_custom": false,
+    "status": "live",
+    "currency": "USD",
+    "listed": true,
+    "shareable": true,
+    "invite_only": false,
+    "online_event": false,
+    "show_remaining": true,
+    "tx_time_limit": 480,
+    "hide_start_date": false,
+    "hide_end_date": false,
+    "locale": "en_US",
+    "is_locked": false,
+    "privacy_setting": "unlocked",
+    "is_series": true,
+    "is_series_parent": false,
+    "is_reserved_seating": false,
+    "source": "create_2.0",
+    "is_free": true,
+    "version": "3.0.0",
+    "logo_id": "37568126",
+    "organizer_id": "15479045115",
+    "venue_id": "22072662",
+    "category_id": null,
+    "subcategory_id": null,
+    "format_id": "19",
+    "resource_uri": "https://www.eventbriteapi.com/v3/events/39032544391/",
+    "series_id": "39032507280",
+    "logo": {
+      "crop_mask": {
+        "top_left": { "x": 70, "y": 20 },
+        "width": 1778,
+        "height": 889
+      },
+      "original": {
+        "url":
+          "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F37568126%2F231365667562%2F1%2Foriginal.jpg?s=42337264b3e4823f54d16853316e22a2",
+        "width": 1920,
+        "height": 1080
+      },
+      "id": "37568126",
+      "url":
+        "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F37568126%2F231365667562%2F1%2Foriginal.jpg?h=200&w=450&rect=70%2C20%2C1778%2C889&s=203c4c75086aaadc9fb7806b24b270eb",
+      "aspect_ratio": "2",
+      "edge_color": "#e70c35",
+      "edge_color_set": true
+    },
+    "organizer": {
+      "description": {
+        "text": "https://www.lowcountryfoodbank.org/",
+        "html": "<P>https://www.lowcountryfoodbank.org/</P>"
+      },
+      "long_description": {
+        "text": "Brian Anderson",
+        "html":
+          "<P><A HREF=\"mailto:briancanderson17@gmail.com\u201d\" REL=\"nofollow\">Brian Anderson</A></P>"
+      },
+      "logo": null,
+      "resource_uri":
+        "https://www.eventbriteapi.com/v3/organizers/15479045115/",
+      "id": "15479045115",
+      "name": "Lowcountry Food Bank",
+      "url": "https://www.eventbrite.com/o/lowcountry-food-bank-15479045115",
+      "num_past_events": 0,
+      "num_future_events": 1,
+      "logo_id": null
+    },
+    "venue": {
+      "address": {
+        "address_1": "2864 Azalea Drive",
+        "address_2": null,
+        "city": "North Charleston",
+        "region": "SC",
+        "postal_code": "29405",
+        "country": "US",
+        "latitude": "32.84433539999999",
+        "longitude": "-79.9722605",
+        "localized_address_display":
+          "2864 Azalea Drive, North Charleston, SC 29405",
+        "localized_area_display": "North Charleston, SC",
+        "localized_multi_line_address_display": [
+          "2864 Azalea Drive",
+          "North Charleston, SC 29405"
+        ]
+      },
+      "resource_uri": "https://www.eventbriteapi.com/v3/venues/22072662/",
+      "id": "22072662",
+      "name": null,
+      "latitude": "32.84433539999999",
+      "longitude": "-79.9722605"
+    },
+    "ticket_classes": [
+      {
+        "resource_uri":
+          "https://www.eventbriteapi.com/v3/events/39032544391/ticket_classes/74526225/",
+        "name": "Charleston LOVE WEEK",
+        "description": null,
+        "donation": false,
+        "free": true,
+        "minimum_quantity": 1,
+        "maximum_quantity": null,
+        "maximum_quantity_per_order": 10,
+        "maximum_quantity_per_order_without_pending": null,
+        "on_sale_status": "AVAILABLE",
+        "quantity_total": 50,
+        "quantity_sold": 25,
+        "sales_end": "2017-12-06T16:00:00Z",
+        "hidden": false,
+        "include_fee": false,
+        "split_fee": false,
+        "hide_description": true,
+        "auto_hide": false,
+        "variants": [],
+        "has_pdf_ticket": true,
+        "sales_channels": ["online", "atd"],
+        "event_id": "39032544391",
+        "id": "74526225"
+      }
+    ]
+  },
+  "page": "event"
+}

@@ -1,0 +1,15 @@
+{% extends "main.jinja2" %}
+
+{% block content %}
+<div class="landing">
+  <div class="shell">
+    <div class="landing__head">
+      <div class="landing__head-inner">
+        <button type="button" href="{{request.route_url('load_list')}}" class="btn-secondary request-list">
+          Sign Up Now
+        </button>
+      </div><!-- /.landing__head-inner -->
+    </div><!-- /.landing__head -->
+  </div><!-- /.shell -->
+</div><!-- ./landing --> 
+{% endblock content %}

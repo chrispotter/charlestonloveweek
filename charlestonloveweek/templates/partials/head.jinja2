@@ -29,5 +29,31 @@
 
 	<!-- App JS -->
 	<script src="{{request.static_url('charlestonloveweek:static/js/functions.js')}}"></script>
+
+	<meta name="description" content="Charleston LOVE WEEK is a unified effort to build on our community’s existing 
+          spirit of caring, unity, compassion, selflessness, and service." />
+
+	<!-- Schema.org markup for Google+ -->
+	<meta itemprop="name" content="Charleston LOVE Week">
+	<meta itemprop="description" content="Charleston LOVE WEEK is a unified effort to build on our community’s existing 
+          spirit of caring, unity, compassion, selflessness, and service.">
+	<meta itemprop="image" content="{{request.static_url('charlestonloveweek:static/css/images/LoveWeekSocial.jpg')}}">
+
+	<!-- Twitter Card data -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Charleston LOVE Week">
+	<meta name="twitter:description" content="Charleston LOVE WEEK is a unified effort to build on our community’s existing 
+          spirit of caring, unity, compassion, selflessness, and service.">
+	<!-- Twitter summary card with large image must be at least 280x150px -->
+	<meta name="twitter:image:src" content="{{request.static_url('charlestonloveweek:static/css/images/LoveWeekSocial.jpg')}}">
+
+	<!-- Open Graph data -->
+	<meta property="og:title" content="Charleston LOVE Week" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://www.charlestonloveweek.com/" />
+	<meta property="og:image" content="{{request.static_url('charlestonloveweek:static/css/images/LoveWeekSocial.jpg')}}" />
+	<meta property="og:description" content="Charleston LOVE WEEK is a unified effort to build on our community’s existing 
+          spirit of caring, unity, compassion, selflessness, and service." />
+	<meta property="og:site_name" content="Charleston LOVE Week" />
 </head>
 {% endblock head %}

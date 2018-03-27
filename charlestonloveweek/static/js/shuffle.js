@@ -9,6 +9,9 @@ var Demo = function (element) {
   this.startDateElement = document.getElementById('start-date');
   this.endDateElement = document.getElementById('end-date');
 
+  this.startdate = this.startDateElement.value
+  this.enddate = this.endDateElement.value
+
   this.shuffle = new Shuffle(element, {
     easing: 'cubic-bezier(0.165, 0.840, 0.440, 1.000)', // easeOutQuart
     sizer: '.the-sizer',
@@ -74,14 +77,17 @@ Demo.prototype._processDates = function (element) {
   var datePass=true;
   if( this.startdate ) {
     var startDate = new Date(this.startdate);
-    datePass = startDateElement > startDate;
+    startDate.setHours(0);
+    datePass = startDateElement >= startDate;
   }
-  if ( datePass && this.enddate ) {
+  if ( (datePass || this.startdate) && this.enddate ) {
     var endDate = new Date(this.enddate)
-    datePass = datePass && (endDate > endDateElement);
+    endDate.setHours(23);
+    datePass = datePass && (endDate >= endDateElement);
   } else if ( this.enddate ){
     var endDate = new Date(this.enddate)
-    datePass = endDate > endDateElement;
+    endDate.setHours(23);
+    datePass = endDate >= endDateElement;
   }
   return datePass;
 }
@@ -183,7 +189,7 @@ Demo.prototype.itemPassesFilters = function (element) {
   return this._processSearch(element) && this._processDates(element);
 };
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('load-filters', function () {
   if(document.querySelector('.events__container')) {
     window.demo = new Demo(document.querySelector('.events__container'));
   }

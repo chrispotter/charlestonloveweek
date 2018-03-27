@@ -5,14 +5,11 @@ from eventbrite import Eventbrite
 def campusFilter(x):
     return x['organizer']['name']
 
-@view_config(route_name='home', renderer='templates/list.jinja2')
+@view_config(route_name='home', renderer='templates/donate.jinja2')
 # @view_config(route_name='home', renderer='json')
 def home_view(request):
-    eventbrite = Eventbrite('LMFOOHNOMAVQGLDMUPIW')
-    event = eventbrite.get('/users/me/owned_events',  data={'expand':'ticket_classes,venue,organizer', 'status':'live'})
-    campus = sorted(list(set(map(campusFilter, event['events']))))
-    # campus = []
-    return {'events' : event['events'], 'pagination': event['pagination'], 'campus' : campus, 'page' : 'home' }
+    return { 'page' : 'donate' }
+
 # @view_config(route_name='event', renderer='json')
 @view_config(route_name='event', renderer='templates/event.jinja2')
 def event_view(request):
@@ -28,27 +25,54 @@ def about_view(request):
     return {}
 
 # @view_config(route_name='load_more', renderer='templates/partials/ajax_list.jinja2')
-@view_config(route_name='load_more', renderer='json')
-def load_more_view(request):
-    continuation = request.matchdict['continuation']
-    event = {}
-    if(continuation):
-        eventbrite = Eventbrite('LMFOOHNOMAVQGLDMUPIW');
-        event = eventbrite.get('/users/me/owned_events',  data={
+@view_config(route_name='load_list', renderer='json')
+def load_list_view(request):
+    eventbrite = Eventbrite('LMFOOHNOMAVQGLDMUPIW');
+    event = eventbrite.get('/users/me/owned_events',  data={'expand':'ticket_classes,venue,organizer', 'status':'live'})
+
+    while(event['pagination']['has_more_items']):
+        newEvent = eventbrite.get('/users/me/owned_events',  data={
             'expand':'ticket_classes,venue,organizer', 
-            'continuation':continuation,
-            'status':'live'
+            'continuation':event['pagination']['continuation']
         })
-        body_dict = {
-            'events': event['events'], 
-            'pagination': event['pagination']
-        }
-        select_dict={
-            'campus': sorted(list(set(map(campusFilter, event['events']))))
-        }
-        
-        return {
-            'success' : True,
-            'body': render('templates/partials/ajax_list.jinja2', body_dict, request),
-            'select': render('templates/partials/ajax_select_options.jinja2', select_dict, request)
-        }
+        event['events'] = event['events'] + newEvent['events']
+        event['pagination'].update(newEvent['pagination'])
+    
+    campus = sorted(list(set(map(campusFilter, event['events']))))
+    body_dict = {
+        'events': event['events'], 
+        'campus': sorted(list(set(map(campusFilter, event['events'])))),
+    }
+    
+    return {
+        'success' : True,
+        'body': render('templates/list.jinja2', body_dict, request),
+    }
+
+@view_config(route_name='list', renderer='json')
+def list_view(request):
+    eventbrite = Eventbrite('LMFOOHNOMAVQGLDMUPIW');
+    event = eventbrite.get('/users/me/owned_events',  data={'expand':'ticket_classes,venue,organizer', 'status':'live'})
+
+    while(event['pagination']['has_more_items']):
+        newEvent = eventbrite.get('/users/me/owned_events',  data={
+            'expand':'ticket_classes,venue,organizer', 
+            'continuation':event['pagination']['continuation']
+        })
+        event['events'] = event['events'] + newEvent['events']
+        event['pagination'].update(newEvent['pagination'])
+    
+    campus = sorted(list(set(map(campusFilter, event['events']))))
+    body_dict = {
+        'events': event['events'], 
+        'campus': sorted(list(set(map(campusFilter, event['events'])))),
+    }
+    
+    return body_dict
+
+
+
+@view_config(route_name='donate', renderer='templates/donate.jinja2')
+def donate_view(request):
+    return {}
+

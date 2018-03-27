@@ -1,0 +1,22 @@
+{% extends "main.jinja2" %}
+
+{% block content %}
+<div class="donate">
+  <div class="shell">
+    <div class="donate__inner">
+      <div class="donate__content">
+        <div class="video-container video-container-16x9">
+          <iframe src="https://awakencharleston.SecureGive.com/SG/WebOnline/Transaction/Instant?transactionType=Donation&campus=5064&lockCampus=true" 
+                  frameborder="0" scrolling="yes" onload="iFrameResize()"></iframe>
+        </div>
+        <div>
+          <span>You may send checks to:</span>
+          <span>3870 Leeds Ave</span>
+          <span>North Charleston, SC 29405</span>
+          <span>Suite 106</span>
+        </div>
+      </div><!-- /.donate__content -->
+    </div><!-- /.donate__inner -->
+  </div><!-- /.shell -->
+</div><!-- /.donate -->
+{% endblock content %}

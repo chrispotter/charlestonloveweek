@@ -1,6 +1,3 @@
-{% extends "main.jinja2" %}
-
-{% block content %}
 <div class="form">
   <div class="shell">
     <div class="form__head">
@@ -131,7 +128,12 @@
           <div class="event__inner">
             <header class="event__head">
               <div class="event__head-meta">
-                <span>{{ event.ticket_classes[0].quantity_total-event.ticket_classes[0].quantity_sold }}</span> Opening(s)
+                {% set count = event.ticket_classes[0].quantity_total-event.ticket_classes[0].quantity_sold %}
+                {% if count > 0 %}
+                <span>{{ count }}</span> Opening(s)
+                {% else %}
+                <span style="width:56px;">Full</span>
+                {% endif %}
               </div><!-- .event__head-meta -->
               
               <div class="event__date">
@@ -152,7 +154,7 @@
         
               <div class="event__foot-inner">
                 <div class="event__location">
-                  <i class="ico-location"></i><i class="ico-location-white"></i> {% if event.venue.address is defined %} {{ event.venue.address.city }} {% else %} Location Disclosed {% endif %}
+                  <i class="ico-location"></i><i class="ico-location-white"></i> {% if event.venue.address is defined %} {{ event.venue.address.city }} {% else %} Location Withheld {% endif %}
                 </div><!-- /.event__location -->
         
                 <div class="event__time">
@@ -164,14 +166,6 @@
         </a><!-- /.event__container -->
       </div><!-- /.event -->
       {% endfor %}
-      {% if(pagination.has_more_items) %}
-      <div class="event">
-        <div class="event__get_more_container event__container">
-          <a href="{{request.route_url('load_more', continuation=pagination.continuation )}}" class="disabled join"> LOAD MORE </a>
-        </div><!-- .events__get_more_container -->
-      </div>
-      {% endif %}
     </div><!-- /.events__container -->
   </div><!-- /.shell -->
 </div><!-- /.events -->
-{% endblock content %}

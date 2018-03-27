@@ -13,13 +13,13 @@ $font-family-serif:                 'Times', serif;
 
 $color-red:                         #fe1521;
 
-
+/* $responsive-i5:                     320px; */
 $responsive-xxs:                    479px;
 $responsive-xs:                     767px;
 $responsive-sm:                     1023px;
 $responsive-md:                     1500px;
 
-
+/* $breakpoint-mobile-i5:              @media (max-width: $responsive-i5); */
 $breakpoint-mobile-portrait:        @media (max-width: $responsive-xxs);
 $breakpoint-mobile:                 @media (max-width: $responsive-xs);
 $breakpoint-tablet-portrait:        @media (max-width: $responsive-sm);

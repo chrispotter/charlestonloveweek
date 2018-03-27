@@ -30,7 +30,12 @@
 	     01. About event - page -----------------------
 	     02. Button -----------------------------------
 	         Button Secondary -------------------------
-	     03. Events -----------------------------------
+	     03. About event - page -----------------------
+	         Small Desktop ----------------------------
+	         Tablet Portrait --------------------------
+	         Mobile -----------------------------------
+	         Mobile -----------------------------------
+	     04. Events -----------------------------------
 	         Event ------------------------------------
 	         Event Head -------------------------------
 	         Event Body -------------------------------
@@ -39,38 +44,42 @@
 	         Small Desktop ----------------------------
 	         Tablet Portrait --------------------------
 	         Mobile -----------------------------------
-	     04. Events - page ----------------------------
+	     05. Events - page ----------------------------
 	         Form Head --------------------------------
 	         Form Cols --------------------------------
 	         Mobile -----------------------------------
-	     05. Form Elements ----------------------------
-	     06. Search -----------------------------------
-	     07. Select -----------------------------------
-	     08. Checkboxes -------------------------------
+	     06. Form Elements ----------------------------
+	     07. Search -----------------------------------
+	     08. Select -----------------------------------
+	     09. Checkboxes -------------------------------
 	         Mobile -----------------------------------
-	     09. Form -------------------------------------
+	     10. Form -------------------------------------
 	         Form Head --------------------------------
 	         Form Cols --------------------------------
 	         Form Row ---------------------------------
 	         Form Actions -----------------------------
 	         Tablet Portrait --------------------------
 	         Mobile -----------------------------------
-	     10. Intro ------------------------------------
+	     11. Intro ------------------------------------
 	         Mobile -----------------------------------
-	     11. List -------------------------------------
-	     12. Logo -------------------------------------
-	     13. Nav --------------------------------------
-	     14. Nav Access -------------------------------
-	     15. Section ----------------------------------
-	     16. Slider -----------------------------------
-	     17. Table ------------------------------------
-	     18. Widget -----------------------------------
+	     12. About event - page -----------------------
+	         Form Head --------------------------------
+	     13. List -------------------------------------
+	     14. Logo -------------------------------------
+	     15. Nav --------------------------------------
+	     16. Nav Access -------------------------------
+	     17. Section ----------------------------------
+	     18. Slider -----------------------------------
+	     19. Table ------------------------------------
+	     20. Widget -----------------------------------
 	IV.  Themes ---------------------------------------
 	     01. Datepicker -------------------------------
 	         Selected Date ----------------------------
 	         Today's Date -----------------------------
  */
 
+/* $responsive-i5:                     320px; */
+/* $breakpoint-mobile-i5:              @media (max-width: $responsive-i5); */
 .ico-arrow-down { background-image: url(images/sprite.png); background-position: 89.65517241379311% 82.75862068965517%; background-size: 680% 680%; width: 10px; height: 10px; display: inline-block; vertical-align: middle; font-size: 0; }
 .ico-arrow-right { background-image: url(images/sprite.png); background-position: 82.14285714285714% 46.42857142857143%; background-size: 566.6666666666667% 566.6666666666667%; width: 12px; height: 12px; display: inline-block; vertical-align: middle; font-size: 0; }
 .ico-arrow-up { background-image: url(images/sprite.png); background-position: 64.28571428571429% 85.71428571428571%; background-size: 566.6666666666667% 566.6666666666667%; width: 12px; height: 12px; display: inline-block; vertical-align: middle; font-size: 0; }
@@ -416,6 +425,73 @@ blockquote:last-child { margin-bottom: 0; }
 .btn-secondary.active span { -ms-transform: rotate(90deg); transform: rotate(90deg); }
 .btn-secondary:hover { background: #fff; color: #fe1521; }
 /* ------------------------------------------------------------ *\
+	About event - page
+\* ------------------------------------------------------------ */
+.donate { position: relative; top: -150px; margin-bottom: 40px; }
+.donate > .shell { position: relative; }
+.donate .donate__inner { 
+	position: relative; 
+	padding: 61px 20px 57px; 
+	background: #fff; 
+	box-shadow: 4px 8px 30px 10px rgba(0, 0, 0, .1); 
+}
+.donate .video-container {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  margin: 5px 0 15px 0px;
+}
+/* 16x9 Aspect Ratio */
+.donate .video-container-16x9 {
+  padding-bottom: 100%;
+}
+/* 4x3 Aspect Ratio */
+.donate .video-container-4x3 {
+  padding-bottom: 75%;
+}
+.donate .video-container iframe {
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.donate .donate__content { max-width: 850px; margin: 0 auto; }
+.donate .donate__content div > span {text-align: center; display:block;}
+.donate .donate__content h4 { text-align: center;}
+.donate .donate__content h5 { text-align: center;}
+.donate iframe #body .heading h1 {
+  display: none; 
+}
+/* Small Desktop */
+@media (max-width: 1500px) {
+	/* 16x9 Aspect Ratio */
+  .donate .video-container-16x9 {
+    padding-bottom: 100%;
+  }
+}
+/* Tablet Portrait */
+@media (max-width: 1023px) {
+	/* 16x9 Aspect Ratio */
+  .donate .video-container-16x9 {
+    padding-bottom: 100%;
+  }
+}
+/* Mobile */
+@media (max-width: 767px) {
+  /* 16x9 Aspect Ratio */
+  .donate .video-container-16x9 {
+    padding-bottom: 200%;
+  }
+}
+/* Mobile */
+/* $breakpoint-mobile-i5 { */
+/* 16x9 Aspect Ratio */
+/* .donate .video-container-16x9 {
+    padding-bottom: 280%;
+  }
+} */
+/* ------------------------------------------------------------ *\
 	Events
 \* ------------------------------------------------------------ */
 .events { margin-bottom: 100px; }
@@ -679,6 +755,18 @@ input:-webkit-autofill { -webkit-text-fill-color: inherit; -webkit-box-shadow: 0
 	.intro .search { margin-bottom: 30px; }
 	.intro .intro__title strong { font-size: 100px; }
 	.intro .intro__title span { font-size: 28px; }
+}
+/* ------------------------------------------------------------ *\
+	About event - page
+\* ------------------------------------------------------------ */
+.landing { position: relative; top: -175px; margin-bottom: 40px; }
+.landing > .shell { position: relative; }
+/*  Form Head  */
+.landing .landing__head { 
+  text-align: center;
+}
+.landing .landing__head-inner { 
+  padding: 0 15px; 
 }
 /* ------------------------------------------------------------ *\
 	List

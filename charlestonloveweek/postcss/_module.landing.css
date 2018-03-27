@@ -1,0 +1,14 @@
+/* ------------------------------------------------------------ *\
+	About event - page
+\* ------------------------------------------------------------ */
+
+.landing { position: relative; top: -175px; margin-bottom: 40px; }
+.landing > .shell { position: relative; }
+
+/*  Form Head  */
+.landing .landing__head { 
+  text-align: center;
+}
+.landing .landing__head-inner { 
+  padding: 0 15px; 
+}

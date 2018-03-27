@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" itemscope itemtype="http://schema.org/Webpage">
 {% include 'partials/header.jinja2' %}
 <body>
 	<main class="main">
 		<div class="intro">
 			<div class="shell">
 			{%- if ( page == "home" )%}
-				<div class="search">
+				<div class="search" style="display:none">
 					<form action="?" method="get">
 						<div class="search__inner">
 							<label for="q" class="search__label">
@@ -38,3 +38,4 @@
 
 		{% block content %} {% endblock content %}
 	</main><!-- /.main -->
+</body>
